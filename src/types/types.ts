@@ -15,11 +15,14 @@ export interface AppConfig {
     modelType: string;
     modelScale: number;
     cameraDistance: number;
+    musicTrack?: string;
   };
   settings: {
     autoRotate: boolean;
     rotateSpeed: number;
     enableControls?: boolean;
+    showUIControls?: boolean;
+    numberHotspots?: boolean;
     hotspots: Array<{
       id?: string;
       position: { x: number; y: number; z: number };
