@@ -18,7 +18,7 @@ export default function App({ config }: AppProps) {
   const rendererRef = useRef<WebGLRenderer | null>(null);
   const controlsRef = useRef<OrbitControls | null>(null);
   const modelRef = useRef<THREE.Object3D | null>(null);
-  const hotspotsRef = useRef<THREE.Mesh[]>([]);
+  const hotspotsRef = useRef<(THREE.Mesh | THREE.Sprite)[]>([]);
   const raycasterRef = useRef(new THREE.Raycaster());
   const mouseRef = useRef(new THREE.Vector2());
 
@@ -74,7 +74,7 @@ export default function App({ config }: AppProps) {
   }, []);
 
   // Handle hotspots ready
-  const handleHotspotsReady = useCallback((hotspots: THREE.Mesh[]) => {
+  const handleHotspotsReady = useCallback((hotspots: (THREE.Mesh | THREE.Sprite)[]) => {
     hotspotsRef.current = hotspots;
     setHotspotsReady(true);
   }, []);
@@ -147,7 +147,7 @@ export default function App({ config }: AppProps) {
 
       // Only handle if we hit a hotspot
       if (intersects.length > 0) {
-        const intersectedObject = intersects[0].object as THREE.Mesh;
+        const intersectedObject = intersects[0].object as THREE.Mesh | THREE.Sprite;
         const hotspotIndex = hotspotsRef.current.findIndex(
           (h) => h.uuid === intersectedObject.uuid
         );

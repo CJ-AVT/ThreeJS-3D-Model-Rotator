@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import type { PerspectiveCamera, WebGLRenderer } from 'three';
-import type { AppConfig } from '../types/types';
+import type { AppConfig } from '@/types/types';
 
 interface ControlsProps {
   camera: PerspectiveCamera;

@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import type { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import type { PerspectiveCamera } from 'three';
-import type { AppConfig } from '../types/types';
+import type { AppConfig } from '@/types/types';
 
 interface CameraAnimationProps {
   camera: PerspectiveCamera;

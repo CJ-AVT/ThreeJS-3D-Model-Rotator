@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import type { AppConfig } from '../types/types';
+import type { AppConfig } from '@/types/types';
 
 interface RendererProps {
   mountRef: React.RefObject<HTMLDivElement>;

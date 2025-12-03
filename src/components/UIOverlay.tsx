@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Maximize, Minimize, RotateCcw, Volume2, VolumeX } from 'lucide-react';
-import type { AppConfig } from '../types/types';
+import type { AppConfig } from '@/types/types';
 
 interface UIOverlayProps {
   config: AppConfig;

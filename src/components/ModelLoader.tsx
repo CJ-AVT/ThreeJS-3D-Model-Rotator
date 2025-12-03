@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
 import type { Scene } from 'three';
-import type { AppConfig } from '../types/types';
+import type { AppConfig } from '@/types/types';
 import {
   handleModelLoadError,
   validateModelUrl,

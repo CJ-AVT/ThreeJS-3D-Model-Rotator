@@ -19,7 +19,7 @@
     "rotateSpeed": 0.5,
     "enableControls": true,
     "showUIControls": false,
-    "numberHotspots": true,
+    "numberHotspots": false,
     "hotspots": [
       {
         "id": "gas-exchange",
@@ -60,7 +60,7 @@
       {
         "id": "diaphragm-role",
         "position": { "x": 0, "y": -0.2, "z": 0.6 },
-        "shape": "box",
+        "shape": "sphere",
         "size": 0.1,
         "color": "#f59e0b",
         "pulsate": false,
@@ -103,18 +103,6 @@
         "content": {
           "title": "Self-Cleaning System",
           "description": "The lungs use mucus and tiny hair-like cilia to trap and remove dust, microbes, and other particles from the airways."
-        }
-      },
-      {
-        "id": "oxygen-demand",
-        "position": { "x": -0.3, "y": -0.5, "z": 0.1 },
-        "shape": "box",
-        "size": 0.09,
-        "color": "#14b8a6",
-        "pulsate": false,
-        "content": {
-          "title": "Adjusting to Oxygen Needs",
-          "description": "The lungs automatically increase breathing rate during exercise to supply more oxygen and remove excess carbon dioxide."
         }
       }
     ]

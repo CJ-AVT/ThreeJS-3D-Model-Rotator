@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import App from '../App';
-import type { AppConfig } from '../types/types';
+import type { AppConfig } from '@/types/types';
 
 export default function ConfigLoader() {
   const [config, setConfig] = useState<AppConfig | null>(null);
