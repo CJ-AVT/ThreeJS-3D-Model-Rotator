@@ -17,6 +17,9 @@
   "settings": {
     "autoRotate": false,
     "rotateSpeed": 0.5,
+    "enableControls": true,
+    "showUIControls": false,
+    "numberHotspots": true,
     "hotspots": [
       {
         "id": "gas-exchange",

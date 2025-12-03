@@ -67,7 +67,6 @@ export function createCameraAnimation({ camera, controls, config }: CameraAnimat
       if (progress < 1) {
         requestAnimationFrame(animateCamera);
       } else {
-        console.log('Animation complete, progress:', progress);
         camera.position.copy(targetPosition);
         controls.target.copy(targetLookAt);
         controls.update();
@@ -76,24 +75,20 @@ export function createCameraAnimation({ camera, controls, config }: CameraAnimat
         controls.autoRotate = wasAutoRotating;
         isAnimating = false;
 
-        console.log('Calling onComplete callback, exists:', !!onComplete);
         if (onComplete) {
           onComplete();
         }
       }
     };
 
-    console.log('Starting camera animation');
     animateCamera();
   };
 
   const animateCameraToHotspot = (hotspotObject: THREE.Object3D, onComplete?: () => void) => {
-    console.log('animateCameraToHotspot called, isAnimating:', isAnimating);
     if (isAnimating) return;
 
     const hotspotPosition = new THREE.Vector3();
     hotspotObject.getWorldPosition(hotspotPosition);
-    console.log('Animating to hotspot position:', hotspotPosition);
 
     const baseDistance = config.assets.cameraDistance;
     const distanceToHotspot = hotspotPosition.length();
@@ -121,12 +116,7 @@ export function createCameraAnimation({ camera, controls, config }: CameraAnimat
 
     const targetLookAt = hotspotPosition.clone();
 
-    animateCameraToPosition(targetPosition, targetLookAt, () => {
-      console.log('Camera animation complete, calling onComplete');
-      if (onComplete) {
-        onComplete();
-      }
-    });
+    animateCameraToPosition(targetPosition, targetLookAt, onComplete);
   };
 
   return {

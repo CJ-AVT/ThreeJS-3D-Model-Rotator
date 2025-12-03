@@ -34,7 +34,6 @@ export default function App({ config }: AppProps) {
   // Initialize camera animation when camera and controls are ready
   useEffect(() => {
     if (cameraRef.current && controlsRef.current && config && !cameraAnimation.current && controlsReady) {
-      console.log('Initializing camera animation');
       cameraAnimation.current = createCameraAnimation({
         camera: cameraRef.current,
         controls: controlsRef.current,
@@ -42,7 +41,6 @@ export default function App({ config }: AppProps) {
       });
       // Save initial position
       cameraAnimation.current.saveInitialPosition();
-      console.log('Camera animation initialized:', !!cameraAnimation.current);
     }
   }, [controlsReady, config]);
 
@@ -77,7 +75,6 @@ export default function App({ config }: AppProps) {
 
   // Handle hotspots ready
   const handleHotspotsReady = useCallback((hotspots: THREE.Mesh[]) => {
-    console.log('Hotspots ready:', hotspots.length);
     hotspotsRef.current = hotspots;
     setHotspotsReady(true);
   }, []);
@@ -132,19 +129,12 @@ export default function App({ config }: AppProps) {
       const timeDiff = Date.now() - mouseDownTime;
       const moveDiff = Math.abs(event.clientX - mouseDownPos.x) + Math.abs(event.clientY - mouseDownPos.y);
       
-      console.log('Click event:', { timeDiff, moveDiff, isDrag: moveDiff > 5 || timeDiff > 300 });
-      
       // If it was a drag (moved more than 5px or took more than 300ms), let OrbitControls handle it
       if (moveDiff > 5 || timeDiff > 300) {
         return;
       }
 
       if (!mountRef.current || !cameraRef.current || !cameraAnimation.current) {
-        console.log('Missing refs:', {
-          mount: !!mountRef.current,
-          camera: !!cameraRef.current,
-          animation: !!cameraAnimation.current
-        });
         return;
       }
 
@@ -155,30 +145,20 @@ export default function App({ config }: AppProps) {
       raycasterRef.current.setFromCamera(mouseRef.current, cameraRef.current);
       const intersects = raycasterRef.current.intersectObjects(hotspotsRef.current);
 
-      console.log('Raycaster check:', {
-        hotspots: hotspotsRef.current.length,
-        intersects: intersects.length,
-        mousePos: { x: mouseRef.current.x, y: mouseRef.current.y }
-      });
-
       // Only handle if we hit a hotspot
       if (intersects.length > 0) {
         const intersectedObject = intersects[0].object as THREE.Mesh;
         const hotspotIndex = hotspotsRef.current.findIndex(
           (h) => h.uuid === intersectedObject.uuid
         );
-        console.log('Hotspot hit! Index:', hotspotIndex, 'Object UUID:', intersectedObject.uuid);
         if (hotspotIndex !== -1) {
           const clickedHotspot = intersects[0].object;
           const hotspotData = config.settings.hotspots[hotspotIndex];
 
           // Animate camera first, then show popup when animation completes
           cameraAnimation.current.animateCameraToHotspot(clickedHotspot, () => {
-            console.log('Showing popup for hotspot:', hotspotData);
             setSelectedHotspot(hotspotData);
           });
-        } else {
-          console.warn('Hotspot object not found in array');
         }
       }
     };
