@@ -1,0 +1,91 @@
+@config "../tailwind.config.ts";
+@import "tailwindcss";
+
+html,
+body,
+#root,
+main {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+:root:focus {
+  outline: none !important;
+}
+
+.noSelect {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.noSelect:focus {
+  outline: none !important;
+}
+
+@font-face {
+  font-family: "News Gothic Condensed Bold";
+  src: url("/fonts/news_gothic_condensed_bold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.popup_background_image {
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 564px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 40px;
+  gap: 30px;
+  place-items: center;
+  z-index: 999;
+}
+
+@media (max-width: 999px) {
+  .information {
+    position: absolute;
+    opacity: 0.9;
+    z-index: 1000;
+    top: 7rem;
+    left: 1rem;
+    background-color: black;
+    border-radius: 10%;
+    padding: 1rem;
+    max-width: 250px;
+  }
+}
+
+/* By default, the icon is visible */
+.popup-icon {
+  display: flex; /* Or whatever display property you need for larger screens */
+}
+
+/* Hide the icon on screens with a maximum width of 999px */
+@media (max-width: 999px) {
+  .popup-icon {
+    display: none;
+  }
+}

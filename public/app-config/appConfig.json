@@ -1,0 +1,119 @@
+{
+  "context": {
+    "title": "Your Title",
+    "description": "Your Description"
+  },
+  "theme": {
+    "backgroundColor": "#1a1a1a",
+    "hotspotColor": "#3b82f6",
+    "popupBackgroundColor": "#ffffff"
+  },
+  "assets": {
+    "modelUrl": "./models/lungs.glb",
+    "modelType": "gltf",
+    "modelScale": 10,
+    "cameraDistance": 3
+  },
+  "settings": {
+    "autoRotate": false,
+    "rotateSpeed": 0.5,
+    "hotspots": [
+      {
+        "id": "best-selling",
+        "position": { "x": 0, "y": 0.8, "z": 0.3 },
+        "shape": "sphere",
+        "size": 0.12,
+        "color": "#3b82f6",
+        "pulsate": true,
+        "content": {
+          "title": "Best-Selling Console",
+          "description": "The PlayStation 2 is the best-selling video game console of all time, with over 155 million units sold worldwide. It dominated the gaming market for over a decade."
+        }
+      },
+      {
+        "id": "release-date",
+        "position": { "x": -0.4, "y": 0.6, "z": 0.4 },
+        "shape": "sphere",
+        "size": 0.1,
+        "color": "#ef4444",
+        "pulsate": false,
+        "content": {
+          "title": "Released in 2000",
+          "description": "The PS2 was released in Japan on March 4, 2000, and later in North America on October 26, 2000. It was Sony's second home video game console."
+        }
+      },
+      {
+        "id": "backward-compatibility",
+        "position": { "x": 0.4, "y": 0.3, "z": 0.5 },
+        "shape": "sphere",
+        "size": 0.11,
+        "color": "#10b981",
+        "pulsate": true,
+        "content": {
+          "title": "Backward Compatibility",
+          "description": "The PS2 was backward compatible with almost all PlayStation 1 games, allowing players to enjoy their existing game library on the new console."
+        }
+      },
+      {
+        "id": "dvd-technology",
+        "position": { "x": 0, "y": -0.2, "z": 0.6 },
+        "shape": "box",
+        "size": 0.1,
+        "color": "#f59e0b",
+        "pulsate": false,
+        "content": {
+          "title": "DVD Technology",
+          "description": "The PS2 was one of the first affordable DVD players on the market, making it a popular choice for home entertainment beyond just gaming."
+        }
+      },
+      {
+        "id": "emotion-engine",
+        "position": { "x": -0.5, "y": 0, "z": 0.3 },
+        "shape": "sphere",
+        "size": 0.1,
+        "color": "#8b5cf6",
+        "pulsate": true,
+        "content": {
+          "title": "Emotion Engine",
+          "description": "The PS2 featured the Emotion Engine processor, a custom 128-bit CPU that delivered impressive graphics and performance for its time."
+        }
+      },
+      {
+        "id": "dualshock-2",
+        "position": { "x": 0.5, "y": -0.4, "z": 0.2 },
+        "shape": "sphere",
+        "size": 0.09,
+        "color": "#ec4899",
+        "pulsate": false,
+        "content": {
+          "title": "DualShock 2 Controller",
+          "description": "The DualShock 2 controller featured pressure-sensitive buttons, allowing for more nuanced gameplay control and enhanced gaming experiences."
+        }
+      },
+      {
+        "id": "longevity",
+        "position": { "x": 0, "y": 0.4, "z": -0.5 },
+        "shape": "sphere",
+        "size": 0.1,
+        "color": "#06b6d4",
+        "pulsate": true,
+        "content": {
+          "title": "13 Years of Production",
+          "description": "The PS2 had an incredible lifespan, with production continuing until January 4, 2013 - over 13 years after its initial release. This makes it one of the longest-running console generations."
+        }
+      },
+      {
+        "id": "online-gaming",
+        "position": { "x": -0.3, "y": -0.5, "z": 0.1 },
+        "shape": "box",
+        "size": 0.09,
+        "color": "#14b8a6",
+        "pulsate": false,
+        "content": {
+          "title": "Online Gaming",
+          "description": "With the Network Adapter accessory, the PS2 enabled online multiplayer gaming, paving the way for modern online gaming experiences."
+        }
+      }
+    ]
+  }
+}
